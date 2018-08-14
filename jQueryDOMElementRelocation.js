@@ -59,3 +59,12 @@ $win.on('mq.desk', function (e) {
     relocate(item.$element, item['desk'], 'top')
   });
 });
+
+     // Init the plugin.
+      $win.mediaQueryEvents({
+        breakpoints: {
+          desk: '(min-width: 1230px)',
+          tab: '(min-width: 768px) and (max-width: 1229px)',
+          mob: '(min-width: 0px) and (max-width: 767px)'
+        }
+      });
