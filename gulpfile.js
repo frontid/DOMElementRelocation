@@ -7,7 +7,7 @@ const buffer = require("vinyl-buffer");
 const del = require("del");
 
 const pluginFile = {
-  srcFile: "jQueryDOMElementRelocation.js",
+  srcFile: "DOMElementRelocation.js",
   srcPath: "./src/",
   dest: "./dist"
 };
