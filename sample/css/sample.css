@@ -73,9 +73,20 @@ body {
     width: 100%;
 }
 
-.search-form{
+.sample-page .search-form {
     padding: 10px;
     background: black;
     width: 80%;
     margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+.sample-page .logo {
+    padding: 10px;
+    background: #3a3a3a;
+    width: 80%;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
 }

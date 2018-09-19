@@ -11,8 +11,12 @@ var DOMElementRelocation = function () {
   function DOMElementRelocation(conf) {
     _classCallCheck(this, DOMElementRelocation);
 
+    var self = this;
+
+    self.$win = $(window);
+
     // Some defaults.
-    this.opts = Object.assign({
+    self.opts = Object.assign({
       breakpoints: {
         desk: '(min-width: 1230px)',
         tab: '(min-width: 768px) and (max-width: 1229px)',
@@ -21,10 +25,8 @@ var DOMElementRelocation = function () {
       elements: []
     }, conf);
 
-    this.$win = $(window);
-
-    this._registerElements();
-    this._registerBreakpoints();
+    self._registerElements();
+    self._registerBreakpoints();
   }
 
   /**
@@ -48,15 +50,10 @@ var DOMElementRelocation = function () {
               k = _ref2[0],
               v = _ref2[1];
 
-          self.$win.on('mq.' + v, function (e) {
-            self._bulkRelocate(v);
+          self.$win.on('mq.' + k, function (e) {
+            self._bulkRelocate(k);
           });
         });
-
-        // $.each(relocatable, function (i, item) {
-        //   relocate(item.$element, item['desk'], 'top')
-        // });
-        //
       }
 
       return _registerElements;
@@ -72,9 +69,10 @@ var DOMElementRelocation = function () {
     key: '_registerBreakpoints',
     value: function () {
       function _registerBreakpoints() {
-        // Register breakpoints.
-        this.$win.mediaQueryEvents({
-          breakpoints: this.opts.breakpoints
+        var self = this;
+
+        self.$win.mediaQueryEvents({
+          breakpoints: self.opts.breakpoints
         });
       }
 
@@ -95,11 +93,10 @@ var DOMElementRelocation = function () {
       function _bulkRelocate(breakpoint) {
         var pos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "top";
 
-        console.log('reubicando');
         var self = this;
 
-        Object.entries(self.opts.elements).map(function (element) {
-          self._relocate(element.$element, element[breakpoint], pos);
+        self.opts.elements.forEach(function (el) {
+          self._relocate(el.element, el[breakpoint], pos);
         });
       }
 
@@ -109,7 +106,7 @@ var DOMElementRelocation = function () {
     /**
      * Moves a DOM element to a new location.
      *
-     * @param $el
+     * @param el
      * @param $target
      * @param position
      *
@@ -119,8 +116,8 @@ var DOMElementRelocation = function () {
   }, {
     key: '_relocate',
     value: function () {
-      function _relocate($el, $target, position) {
-        var self = this;
+      function _relocate(el, $target, position) {
+        var $el = $(el);
 
         // First time we memorize the original position.
         if ($el.data('original-position') === undefined) {
