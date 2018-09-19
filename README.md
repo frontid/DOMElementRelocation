@@ -11,14 +11,15 @@ poner imagen de como funca por aca
 
 You need jQuery and mediaQueryEvents plugin.
  
-```
+```html
 <script src="js/jquery.js"></script>
 <script src="/js/mediaQueryEvents.jquery.js"></script>
 <script src="../dist/DOMElementRelocation.js"></script>
 ```
 
 And define the breakpoints and the element's behavior:
-```
+
+```javascript
 $(function () {
 
   // Define here the elements and the positions will
