@@ -3,11 +3,14 @@
 Relocate DOM elements when the browser reaches a breakpoint.
 Works both ways.
 
-See the working example here.
+### When you need DOMElementRelocation?
+When you need to relocate an element totally out of scope new location. For example moving a search form from the header at desktop to the footer at mobile.
 
-poner imagen de como funca por aca
+[See the working example here.](https://frontid.github.io/DOMElementRelocation/sample/)
 
-#Usage
+![DOMElementRelocation working sample](https://frontid.github.io/DOMElementRelocation/sample/img/sample.gif "Sample")
+
+# Usage
 
 You need jQuery and mediaQueryEvents plugin.
  
@@ -53,4 +56,5 @@ $(function () {
 });
 ```
 On this example, there are 3 four breakpoints defined. They can have any name and the value must be a valid CSS media query.
+
 And on the "elements" key we are setting up each element and the position it would take when a breakpoint is reached.
