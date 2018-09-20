@@ -12,14 +12,12 @@ const pluginFile = {
   dest: "./dist"
 };
 
-
 /**
  * Clean dist dir.
  */
 function cleanTask() {
   return del(['dist']);
 }
-
 
 /**
  * Converts ES6 code into compatible browser code.
@@ -37,7 +35,6 @@ function babelizeTask() {
     .pipe(gulp.dest(pluginFile.dest));
 
 }
-
 
 /**
  * Watcher.
