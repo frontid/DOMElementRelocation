@@ -1,8 +1,8 @@
 {
-  "name": "ckeditor_responsive_table",
+  "name": "dom_element_relocation",
   "version": "1.0.0",
-  "main": "plugin.js",
-  "repository": "git@github.com:frontid/ckeditor_responsive_table.git",
+  "main": "DOMElementRelocation.js",
+  "repository": "git@github.com:frontid/DOMElementRelocation.git",
   "author": "Marcelo Tosco @capynet <marcelo@front.id>",
   "license": "MIT",
   "devDependencies": {},
