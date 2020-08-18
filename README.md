@@ -6,7 +6,7 @@ Works both ways.
 ### When you need DOMElementRelocation?
 When you need to relocate an element totally out of scope new location. For example moving a search form from the header at desktop to the footer at mobile.
 
-[See the working example here.](https://frontid.github.io/DOMElementRelocation/sample/)
+[See the working example here.](https://frontid.github.io/DOMElementRelocation/)
 
 ![DOMElementRelocation working sample](https://github.com/frontid/DOMElementRelocation/blob/gh-pages/img/sample.gif "Sample")
 
