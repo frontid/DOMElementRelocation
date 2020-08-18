@@ -8,7 +8,7 @@ When you need to relocate an element totally out of scope new location. For exam
 
 [See the working example here.](https://frontid.github.io/DOMElementRelocation/sample/)
 
-![DOMElementRelocation working sample](https://frontid.github.io/DOMElementRelocation/sample/img/sample.gif "Sample")
+![DOMElementRelocation working sample](https://github.com/frontid/DOMElementRelocation/blob/gh-pages/img/sample.gif "Sample")
 
 # Usage
 
