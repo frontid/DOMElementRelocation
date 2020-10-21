@@ -22,7 +22,7 @@ $(function () {
           element: '.logo',
           reallySmall: '.sample-page > footer',
           mob: false,
-          tab: '.region-sidebar-left',
+          tab: ['.region-sidebar-left', 'bottom'],
           desk: false,
         }
       ]
