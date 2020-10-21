@@ -40,7 +40,7 @@ $(function () {
           element: '.search-form',
           reallySmall: '.sample-page > footer',
           mob: '.sample-page > .region-sidebar-right',
-          tab: '.region-sidebar-left',
+          tab: ['.region-sidebar-left', 'bottom'],
           desk: '.sample-page > header'
         },
         {
