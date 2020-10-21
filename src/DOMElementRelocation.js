@@ -3,7 +3,7 @@ class DOMElementRelocation {
   constructor(conf) {
     const self = this;
 
-    self.$win = $(window);
+    self.$win = jQuery(window);
 
     // Some defaults.
     self.opts = {
@@ -56,15 +56,14 @@ class DOMElementRelocation {
   /**
    * Relocates a group of elements.
    * @param breakpoint
-   * @param pos
    *
    * @private
    */
-  _bulkRelocate(breakpoint, pos = "top") {
+  _bulkRelocate(breakpoint) {
     const self = this;
 
     self.opts.elements.forEach(el => {
-      self._relocate(el.element, el[breakpoint], pos);
+      self._relocate(el.element, el[breakpoint]);
     });
 
   }
@@ -78,8 +77,16 @@ class DOMElementRelocation {
    *
    * @private
    */
-  _relocate(el, $target, position) {
+  _relocate(el, $target) {
+    const $ = jQuery
     const $el = $(el);
+    let position = 'top'
+
+    // Single value means just the target. Array is target + position
+    if (Array.isArray($target)) {
+      position = $target[1]
+      $target = $target[0]
+    }
 
     // First time we memorize the original position.
     if ($el.data('original-position') === undefined) {
@@ -95,7 +102,8 @@ class DOMElementRelocation {
 
     if (position === 'top') {
       $el.prependTo($target);
-    } else {
+    }
+    else {
       $el.appendTo($target);
     }
 
